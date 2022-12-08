@@ -1,13 +1,12 @@
-import React from 'react'
+import React from "react";
+import Quiz from "./component/Quiz";
 
 const index = () => {
   return (
     <>
-    <div className='test'>
-    <h4>ijsdfjslkdfjslafjs lfjjf</h4>
-    </div>
+      <Quiz />
     </>
-  )
-}
+  );
+};
 
-export default index
+export default index;

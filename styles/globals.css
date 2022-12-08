@@ -1,26 +1,47 @@
-html,
+
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #fef6e4;
+  font-family: "VT323", monospace;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.variant {
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-* {
-  box-sizing: border-box;
+.correctAnswer {
+  color: #FFFFFF;
+  background: #198754;
+  padding: 1rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.correctAnswer:after {
+  background: #198754;
+  color: #FFFFFF;
+  visibility: visible;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top:10px;
+  content: "correct!";
+}
+
+.incorrectAnswer {
+  background: #DC3545;
+  color: #FFFFFF;
+}
+
+.incorrectAnswer:after {
+  background: #DC3545;
+  color: #FFFFFF;
+  visibility: visible;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top:10px;
+  content: "incorrect!";
 }
