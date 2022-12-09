@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { data } from "./data";
+import { data } from "../lib/data";
 
 
 const Quiz = () => {
@@ -45,7 +45,7 @@ const Quiz = () => {
       
         if (finish) {
           return (
-            <div className="container m-4 p-4 mx-auto vh-100 d-flex align-items-center flex-column justify-content-center">
+            <div className="container m-4 p-2 p-md-4 mx-auto vh-100 d-flex align-items-center flex-column justify-content-center">
                 <h3 className="m-4 p-2 h-30 text-center fs-3 fw-bold">
                   {`Game Over! Your Final Score is
                   ${score}/${data.length - 1}
@@ -61,7 +61,7 @@ const Quiz = () => {
           );
         } else {
           return (
-            <div className="container m-4 p-4 mx-auto vh-100 d-flex align-items-center flex-column justify-content-center" style={{maxWidth:'800px'}}>
+            <div className="container m-4 p-2 p-md-4 mx-auto vh-100 d-flex align-items-center flex-column justify-content-center" style={{maxWidth:'800px'}}>
                 <h2 className="m-4 p-2 fw-bold fs-3">
                   {data[currentQuestion].question}
                 </h2>
@@ -74,7 +74,7 @@ const Quiz = () => {
                     <div className="m-2 card w-100 mx-auto text-center" key={variant.id}>
                      <div className="">
                      <p
-                     className={`variant card-body fs-4 ${
+                     className={`variant card-body fs-4 p-0 p-md-3 ${
                        myAnswer === variant
                          ? myAnswer === data[currentQuestion].answer
                            ? "correctAnswer"
@@ -97,7 +97,7 @@ const Quiz = () => {
       
                 {clickAnswer && (
                   <button
-                    className="btn btn-outline-info fw-bold fs-4 mt-4 py-3 px-5 rounded-lg"
+                    className="btn btn-outline-info fw-bold fs-4 mt-4 py-2 py-md-3 px-5 rounded-lg"
                     onClick={() => showAnswer()}
                   >
                     Show Answer
@@ -107,7 +107,7 @@ const Quiz = () => {
       
                 {currentQuestion < data.length - 1 && (
                   <button
-                    className="btn btn-outline-dark fw-bold fs-4 mt-4 rounded-lg px-5 py-3"
+                    className="btn btn-outline-dark fw-bold fs-4 mt-4 rounded-lg px-5 py-2 py-md-3"
                     onClick={() => {
                       setCurrentQuestion(currentQuestion + 1);
                       checkCorrectAnswer();
@@ -120,7 +120,7 @@ const Quiz = () => {
       
                 {currentQuestion === data.length - 1 && (
                   <button
-                    className="btn btn-outline-danger fw-bold fs-4 mt-4 rounded-lg px-5 py-3"
+                    className="btn btn-outline-danger fw-bold fs-4 mt-4 rounded-lg px-5 py-2 py-md-3"
                     onClick={() => finishHandler()}
                   >
                     FINISH
