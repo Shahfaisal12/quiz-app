@@ -14,6 +14,7 @@ const Quiz = () => {
         const checkAnswer = (variant) => {
           setMyAnswer(variant);
           setClickAnswer(true);
+          // console.log(variant)
         };
       
         const checkCorrectAnswer = () => {
@@ -103,7 +104,6 @@ const Quiz = () => {
                     Show Answer
                   </button>
                 )}
-                
       
                 {currentQuestion < data.length - 1 && (
                   <button
